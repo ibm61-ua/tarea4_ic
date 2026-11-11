@@ -1,0 +1,9 @@
+# ==============================================================================
+# Archivo de hosts / máquinas para ejecución distribuida con OpenMPI
+# Escenario: N_procesos > N_ordenadores (múltiples procesos/slots por ordenador)
+# ==============================================================================
+# Modifique las siguientes direcciones IP o nombres DNS según las máquinas asignadas.
+# El parámetro 'slots' define la capacidad de procesos asignables a cada nodo.
+192.168.1.101 slots=4
+192.168.1.102 slots=4
+192.168.1.103 slots=4

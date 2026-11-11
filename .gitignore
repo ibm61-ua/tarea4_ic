@@ -1,0 +1,31 @@
+# Build directories
+build/
+bin/
+obj/
+
+# Compilations & binaries
+*.o
+*.obj
+*.exe
+*.out
+*.dll
+*.so
+*.dylib
+*.a
+
+# Profiling outputs
+gmon.out
+perfil.txt
+
+# Dataset directories & archives
+train/
+test/
+*.gz
+*.ubyte
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.user
+CMakeUserPresets.json

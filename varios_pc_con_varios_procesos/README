@@ -1,0 +1,24 @@
+# knn2: MNIST kNN without OpenCV
+
+Requires a C++17 compiler and CMake 3.15+. No OpenCV or OpenMP is needed.
+
+Build and test:
+  cmake -S . -B build
+  cmake --build build
+  ctest --test-dir build --output-on-failure
+
+Download MNIST with ./get_dataset.sh (requires wget and gzip), or place the
+uncompressed IDX files in build/train and build/test. Run from build:
+  cd build
+  ./cv
+
+Images use an owned std::vector<float>, half-size bilinear resizing with
+byte rounding, and per-image min/max normalization to [0,1]. Constant images
+become zero. MNIST 28x28 images become 14x14. Floating-point/rounding details
+may differ slightly from OpenCV; bit-for-bit equivalence is not guaranteed.
+For rectangular images the destination keeps rows and columns in their
+correct order (the original OpenCV Size arguments were swapped).
+The classifier, voting and k search remain the teaching implementation.
+All samples participate in cross-validation, including the remainder.
+Invalid k/fold values are rejected. IDX reads are checked for truncation,
+and temporary pixel buffers are released automatically.

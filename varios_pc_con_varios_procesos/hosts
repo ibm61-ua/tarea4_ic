@@ -1,0 +1,8 @@
+# ==============================================================================
+# Archivo de hosts / máquinas para ejecución distribuida con OpenMPI
+# Escenario: N_procesos = N_ordenadores (1 proceso por ordenador)
+# ==============================================================================
+# Modifique las siguientes direcciones IP o nombres DNS según las máquinas asignadas:
+192.168.1.101 slots=1
+192.168.1.102 slots=1
+192.168.1.103 slots=1
